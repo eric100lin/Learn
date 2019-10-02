@@ -8,6 +8,8 @@ Something I have learned...
 | Tree  | [105.py](./algorithm/Sort/105.py)|
 
 ## [Bash](./bash/)
+* Bash Reference Manual: [link](https://www.gnu.org/software/bash/manual/bash.html)
+
 | Title      | Solution                      |
 | -----      | --------                      | 
 |Bash Builtin|[builtin.sh](./bash/builtin.sh)|
