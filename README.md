@@ -4,8 +4,9 @@ Something I have learned...
 ## [Algorithm](./algorithm/)
 | Title | Solution |
 | ----- | -------- |
-| Sort  | [75.py](./algorithm/Sort/75.py)<br>[953.py](./algorithm/Sort/953.py)  |
+| Sort  | [Sorting.py](./algorithm/Sort/Sorting.py)<br>[75.py](./algorithm/Sort/75.py)<br>[953.py](./algorithm/Sort/953.py)  |
 | Tree  | [105.py](./algorithm/Sort/105.py)|
+| Graph | [Graph.py](./algorithm/Graph/Graph.py)<br>[200.py](./algorithm/Graph/200.py)|
 
 ## [Bash](./bash/)
 * Bash Reference Manual: [link](https://www.gnu.org/software/bash/manual/bash.html)
