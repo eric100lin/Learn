@@ -69,19 +69,19 @@ def largest_bst_subtree(root):
     ret = None
     if root:
         res = 0
-        import queue
-        q = queue.Queue()
-        q.put(root)
-        while not q.empty():
-            node = q.get()
+        import collections
+        q = collections.deque()
+        q.append(root)
+        while q:
+            node = q.popleft()
             is_valid, cnt = isValidBST(node)
             if is_valid and cnt > res:
                 res = cnt
                 ret = node
             if node.left is not None:
-                q.put(node.left)
+                q.append(node.left)
             if node.right is not None:
-                q.put(node.right)
+                q.append(node.right)
     return ret
 
 

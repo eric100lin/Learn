@@ -48,17 +48,17 @@ class Solution:
     def countUnivalSubtrees(self, root):
         count = 0
         if root:
-            import queue
-            q = queue.Queue()
-            q.put(root)
-            while not q.empty():
-                node = q.get()
+            import collections
+            q = collections.deque()
+            q.append(root)
+            while q:
+                node = q.popleft()
                 if self.isUnival(node):
                     count += 1
                 if node.left is not None:
-                    q.put(node.left)
+                    q.append(node.left)
                 if node.right is not None:
-                    q.put(node.right)
+                    q.append(node.right)
         return count
 
 a = Node(0)

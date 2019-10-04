@@ -6,17 +6,17 @@ def dfs(graph, vertex, visited = set()):
             dfs(graph, neighbor, visited)
 
 def bfs(graph, vertex):
-    import queue
-    q = queue.Queue()
-    q.put(vertex)
+    import collections
+    q = collections.deque()
+    q.append(vertex)
     visited = { vertex }
-    while not q.empty():
-        v = q.get()
+    while q:
+        v = q.popleft()
         print(v, end=' ')
         for neighbor in graph[v]:
             if neighbor not in visited:
                 visited.add(neighbor)
-                q.put(neighbor)
+                q.append(neighbor)
 
 graph = {
     'A': ['B', 'C'],
