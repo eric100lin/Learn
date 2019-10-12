@@ -8,9 +8,10 @@ Something I have learned...
 | Sort  | <ol><li>[Sorting.py](./algorithm/Sort/Sorting.py)</li><li>[15.py](./algorithm/Sort/15.py) 3Sum</li><li>[41.py](./algorithm/Sort/41.py) First Missing Positive</li><li>[49.py](./algorithm/Sort/49.py) Group Anagrams</li><li>[75.py](./algorithm/Sort/75.py) Sort Colors</li><li>[253.py](./algorithm/Sort/253.py) Meeting Rooms II</li><li>[295.py](./algorithm/Sort/295.py) Find Median from Data Stream</li><li>[953.py](./algorithm/Sort/953.py) Verifying an Alien Dictionary</li><li>[1051.py](./algorithm/Sort/1051.py) Height Checker</li></ol> |
 | Tree  | <ol><li>[Traversal.py](./algorithm/Tree/Traversal.py) / [BinarySearch.py](./algorithm/Tree/BinarySearch.py)</li><li>[98.py](./algorithm/Tree/98.py) Validate Binary Search Tree</li><li>[104.py](./algorithm/Tree/104.py) Maximum Depth of Binary Tree</li><li>[105.py](./algorithm/Tree/105.py) Construct Binary Tree from Preorder and Inorder Traversal</li><li>[108.py](./algorithm/Tree/108.py) Convert Sorted Array to Binary Search Tree</li><li>[250.py](./algorithm/Tree/250.py) Count Univalue Subtrees</li><li>[333.py](./algorithm/Tree/333.py) Largest BST Subtree</li><li>[863.py](./algorithm/Tree/863.py) All Nodes Distance K in Binary Tree</li></ol> |
 | Graph | <ol><li>[Graph.py](./algorithm/Graph/Graph.py)</li><li>[200.py](./algorithm/Graph/200.py) Number of Islands</li></ol> |
-| LinkedList | <ol><li>[19.py](./algorithm/Graph/19.py) Remove Nth Node From End of List</li></ol> |
+| LinkedList | <ol><li>[19.py](./algorithm/LinkedList/19.py) Remove Nth Node From End of List</li><li>[160.py](./algorithm/LinkedList/160.py) Intersection of Two Linked Lists</li></ol> |
+| Dynamic Programming | <ol><li>[62.py](./algorithm/DP/62.py) Unique Paths</li></ol> |
 | SubString | <ol><li>[386.py](./algorithm/SubString/386.py) Longest Substring with At Most K Distinct Characters</li></ol> |
-| Math | <ol><li>[1.py](./algorithm/Math/1.py) Two Sum</li><li>[1071.py](./algorithm/Math/1071.py) Greatest Common Divisor of Strings</li><li>[5183.py](./algorithm/Math/5183.py) Day of the Week</li></ol> |
+| Math | <ol><li>[1.py](./algorithm/Math/1.py) Two Sum</li><li>[224.py](./algorithm/Math/224.py) Basic Calculator</li><li>[1071.py](./algorithm/Math/1071.py) Greatest Common Divisor of Strings</li><li>[5183.py](./algorithm/Math/5183.py) Day of the Week</li></ol> |
 
 ## [Bash](./bash/)
 * Bash Reference Manual: [link](https://www.gnu.org/software/bash/manual/bash.html)
