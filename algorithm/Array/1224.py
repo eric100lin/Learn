@@ -35,6 +35,12 @@ Constraints:
 from typing import *
 import collections
 
+# https://leetcode.com/problems/maximum-equal-frequency/discuss/403628/Easy-Python-Solution-Concise-10-lines-Explained-O(N)
+# cnt records the occurence of each num, freq records the frequence of number of occurences. maxF is the largest frequence.
+# There are three cases which satify the condition:
+#  1.all elements appear exact once.
+#  2.all elements appear maxF times, except one appears once.
+#  3.all elements appear maxF-1 times, except one appears maxF.
 class Solution:
     def maxEqualFreq(self, nums: List[int]) -> int:
         cnt,freq,maxF,res = collections.defaultdict(int), collections.defaultdict(int),0,0
