@@ -32,6 +32,8 @@ import collections
 
 class Solution:
     def buddyStrings(self, A, B):
+        # NG Case 1: length not equal
+        # NG Case 2: either of them is empty
         if len(A)!=len(B) or len(A)==0 or len(B)==0:
             return False
         diff = []
@@ -40,10 +42,12 @@ class Solution:
             dict[A[i]] += 1
             if A[i]!=B[i]:
                 diff.append(i)
+        # OK Case 1: no different with duplicate letters
         if len(diff) == 0:
             for count in dict.values():
                 if count>=2:
                     return True
+        # OK Case 2: just two differents and match after exchange
         elif len(diff)==2:
             if A[diff[0]] == B[diff[1]] and \
                A[diff[1]] == B[diff[0]]:
