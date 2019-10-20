@@ -10,8 +10,8 @@ Something I have learned...
 | Graph | <ol><li>[Graph.py](./algorithm/Graph/Graph.py)</li><li>[200.py](./algorithm/Graph/200.py) Number of Islands</li><li>[1222.py](./algorithm/Graph/1222.py) Queens That Can Attack the King</li></ol> |
 | LinkedList | <ol><li>[19.py](./algorithm/LinkedList/19.py) Remove Nth Node From End of List</li><li>[160.py](./algorithm/LinkedList/160.py) Intersection of Two Linked Lists</li><li>[1171.py](./algorithm/LinkedList/1171.py) Remove Zero Sum Consecutive Nodes from Linked List</li></ol> |
 | Dynamic Programming | <ol><li>[62.py](./algorithm/DP/62.py) Unique Paths</li><li>[70.py](./algorithm/DP/70.py) Climbing Stairs</li><li>[72.py](./algorithm/DP/72.py) Edit Distance</li><li>[1223.py](./algorithm/DP/1223.py) Dice Roll Simulation</li></ol> |
-| SubString | <ol><li>[386.py](./algorithm/SubString/386.py) Longest Substring with At Most K Distinct Characters</li></ol> |
-| Math | <ol><li>[1.py](./algorithm/Math/1.py) Two Sum</li><li>[7.py](./algorithm/Math/7.py) Reverse Integer</li><li>[172.py](./algorithm/Math/172.py) Factorial Trailing Zeroes</li><li>[224.py](./algorithm/Math/224.py) Basic Calculator</li><li>[1071.py](./algorithm/Math/1071.py) Greatest Common Divisor of Strings</li><li>[5183.py](./algorithm/Math/5183.py) Day of the Week</li></ol> |
+| SubString | <ol><li>[386.py](./algorithm/SubString/386.py) Longest Substring with At Most K Distinct Characters</li><li>[1233.py](./algorithm/SubString/1233.py) Remove Sub-Folders from the Filesystem</li></ol> |
+| Math | <ol><li>[1.py](./algorithm/Math/1.py) Two Sum</li><li>[7.py](./algorithm/Math/7.py) Reverse Integer</li><li>[172.py](./algorithm/Math/172.py) Factorial Trailing Zeroes</li><li>[224.py](./algorithm/Math/224.py) Basic Calculator</li><li>[1071.py](./algorithm/Math/1071.py) Greatest Common Divisor of Strings</li><li>[1232.py](./algorithm/Math/1232.py) Check If It Is a Straight Line</li><li>[5183.py](./algorithm/Math/5183.py) Day of the Week</li></ol> |
 
 ## [Bash](./bash/)
 * Bash Reference Manual: [link](https://www.gnu.org/software/bash/manual/bash.html)
