@@ -22,9 +22,7 @@ import collections
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
         res = []
-        dict1 = collections.defaultdict(int)
-        for n in nums1:
-            dict1[n] += 1
+        dict1 = collections.Counter(nums1)
         for n in nums2:
             if n in dict1 and dict1[n]!=0:
                 dict1[n] -= 1
