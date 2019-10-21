@@ -3,8 +3,11 @@
 https://leetcode.com/problems/validate-binary-search-tree/
 
 Hi, here's your problem today. This problem was recently asked by Facebook:
-
-You are given the root of a binary search tree. Return true if it is a valid binary search tree, and false otherwise. Recall that a binary search tree has the property that all values in the left subtree are less than or equal to the root, and all values in the right subtree are greater than or equal to the root.
+You are given the root of a binary search tree. 
+Return true if it is a valid binary search tree, and false otherwise. 
+Recall that a binary search tree has the property that 
+all values in the left subtree are less than or equal to the root, 
+and all values in the right subtree are greater than or equal to the root.
 '''
 from typing import *
 
