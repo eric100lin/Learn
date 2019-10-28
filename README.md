@@ -21,3 +21,9 @@ Something I have learned...
 |Bash Builtin|[builtin.sh](./bash/builtin.sh)|
 |Array       |[Array.sh](./bash/Array.sh)    |
 |Find Command|[find.sh](./bash/find.sh)      |
+
+## [Language](./language/)
+
+| Title      | Solution                      |
+| -----      | --------                      | 
+|MRO|<ul><li>[MRO.py](./language/MRO/MRO.py) _(MAGIC MRO!)_</li><li>[MainClazz.java](./language/MRO/MainClazz.java) _(NO MRO)_</li><li>[Main.cpp](./language/MRO/Main.cpp) _(NO MRO)_</li></ul>|
