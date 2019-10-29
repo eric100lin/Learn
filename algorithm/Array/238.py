@@ -14,10 +14,15 @@ from typing import *
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
+        # One multiple any number equal to the number
+        # Initial value for index 0 which do not have left part
         result = [1]*len(nums)
         R = 1
+        # Calculate Left part for each i
+        # Start from index 1 since index 0 do not have left part
         for i in range(1, len(nums)):
             result[i] = result[i-1]*nums[i-1]
+        # Calculate right part for each i
         for i in range(len(nums)-1,-1,-1):
             result[i] *= R
             R *= nums[i]
