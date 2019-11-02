@@ -43,8 +43,10 @@ import collections
 def groupAnagramWordsSort(strs):
     dict = collections.defaultdict(list)
     for str in strs:
+        # Use tuple here, since 'list' is unhashable!!
         dict[tuple(sorted(strs))].append(str)
-    return list(dict.values())  #dict_values to list
+    # dict_values to list!!
+    return list(dict.values())
 
 #Count O(nk) solution!
 def groupAnagramWords(strs):
