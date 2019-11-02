@@ -44,6 +44,8 @@ class Solution:
         for f in folder:
             path = f
             while path:
+                # Cut down last ..."/xx" to move 
+                # upper level and look for it in set
                 path = path[:path.rfind('/')]
                 if path in set:
                     break
@@ -52,5 +54,8 @@ class Solution:
         return ans
 
 print(Solution().removeSubfolders(["/a","/a/b","/c/d","/c/d/e","/c/f"]))
+#['/a', '/c/d', '/c/f']
 print(Solution().removeSubfolders(["/a","/a/b/c","/a/b/d"]))
+#['/a']
 print(Solution().removeSubfolders(["/a/b/c","/a/b/ca","/a/b/d"]))
+#['/a/b/c', '/a/b/ca', '/a/b/d']

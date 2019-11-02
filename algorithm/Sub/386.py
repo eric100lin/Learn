@@ -21,35 +21,35 @@ Input: [1, 3, 5, 3, 1, 3, 1, 5]
 Output: 4
 The longest sequence that contains just 2 unique numbers is [3, 1, 3, 1]
 '''
+from typing import *
+
 class Solution:
-    """
-    @param s: A string
-    @param k: An integer
-    @return: An integer
-    """
-    def lengthOfLongestSubstringKDistinct(self, s, k):
-        maxLength = 0
+    def lengthOfLongestSubstringKDistinct(self, s: str, k: int) -> int:
+        maxSubLength, left = 0, 0
         charDict = {}
-        left = 0
-        for idx in range(len(s)):
-            charDict[s[idx]] = idx
+        for idx,char in enumerate(s):
+            # only need to keep last appear
+            charDict[char] = idx
             while len(charDict)>k:
                 if charDict[s[left]] == left:
                     del charDict[s[left]]
                 left += 1
-            maxLength = max(maxLength, idx - left + 1)
-        return maxLength
-    def findSequence(self, seq):
-        maxSequence, left = 0, 0
-        dict = {}
-        for i,s in enumerate(seq):
-            dict[s] = i #We only need to keep last appear of s
-            while len(dict) > 2:
-                if dict[seq[left]] == left: #if seq[left] not duplicate
-                    del dict[seq[left]]
+            # do not count length, just minus index for length
+            maxSubLength = max(maxSubLength, idx - left + 1)
+        return maxSubLength
+    
+    def findSequence(self, seq: List[int]) -> int:
+        maxSubLength, left = 0, 0
+        numDict = {}
+        for idx,s in enumerate(seq):
+            # only need to keep last appear
+            numDict[s] = idx
+            while len(numDict) > 2:
+                if numDict[seq[left]] == left: #if seq[left] not duplicate
+                    del numDict[seq[left]]
                 left += 1
-            maxSequence = max(maxSequence, i - left + 1)
-        return maxSequence
+            maxSubLength = max(maxSubLength, idx - left + 1)
+        return maxSubLength
 
 import unittest
 
