@@ -2,12 +2,12 @@
 104. Maximum Depth of Binary Tree
 https://leetcode.com/problems/maximum-depth-of-binary-tree/
 
-Hi, here's your problem today. This problem was recently asked by Google:
-
-You are given the root of a binary tree. Return the deepest node (the furthest node from the root).
+Hi, here's your problem today. 
+This problem was recently asked by Google:
+You are given the root of a binary tree.
+Return the deepest node (the furthest node from the root).
 
 Example:
-
     a
    / \
   b   c
@@ -31,17 +31,16 @@ class TreeNode(object):
 
 class Solution:
     def maxDepth(self, root: TreeNode) -> int:
-        if not root:
-            return 0
-        q = collections.deque()
-        q.append((root, 1))
-        maxdepth = 1
-        while q:
-            (node, depth) = q.popleft()
-            maxdepth = max(maxdepth, depth)
-            for children in (node.left, node.right):
-                if children is not None:
-                    q.append((children, depth+1))
+        maxdepth = 0
+        if root:
+            q = collections.deque()
+            q.append((root, 1))
+            while q:
+                (node, depth) = q.popleft()
+                maxdepth = max(maxdepth, depth)
+                for children in (node.left, node.right):
+                    if children:
+                        q.append((children, depth+1))
         return maxdepth
 
 def deepest(node):

@@ -30,7 +30,7 @@ class TreeNode:
             nodes.append(node.right)
         return answer
 
-class Solution:
+class IndexSolution:
     def sortedArrayToBST(self, nums: List[int], left=None, right=None) -> TreeNode:
         if not nums:
             return None
@@ -43,6 +43,16 @@ class Solution:
         node = TreeNode(nums[mid])
         node.left = self.sortedArrayToBST(nums, left, mid-1)
         node.right = self.sortedArrayToBST(nums, mid+1, right)
+        return node
+
+class Solution:
+    def sortedArrayToBST(self, nums: List[int]) -> TreeNode:
+        if not nums:
+            return None
+        mid = len(nums) // 2
+        node = TreeNode(nums[mid])
+        node.left = self.sortedArrayToBST(nums[:mid])
+        node.right = self.sortedArrayToBST(nums[mid+1:])
         return node
 
 print(Solution().sortedArrayToBST([1, 2, 3, 4, 5, 6, 7]))

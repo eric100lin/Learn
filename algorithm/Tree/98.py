@@ -2,12 +2,22 @@
 98. Validate Binary Search Tree
 https://leetcode.com/problems/validate-binary-search-tree/
 
+Given a binary tree, 
+determine if it is a valid binary search tree (BST).
+Assume a BST is defined as follows:
+*The left subtree of a node contains only 
+ nodes with keys less than the node's key.
+*The right subtree of a node contains only 
+ nodes with keys greater than the node's key.
+*Both the left and right subtrees must also 
+ be binary search trees.
+
 Hi, here's your problem today. This problem was recently asked by Facebook:
 You are given the root of a binary search tree. 
 Return true if it is a valid binary search tree, and false otherwise. 
 Recall that a binary search tree has the property that 
-all values in the left subtree are less than or equal to the root, 
-and all values in the right subtree are greater than or equal to the root.
+all values in the left subtree are less than the root, 
+and all values in the right subtree are greater than the root.
 '''
 from typing import *
 
@@ -18,6 +28,8 @@ class TreeNode:
         self.left = None
         self.right = None
 
+#Time complexity : O(N) since we visit each node exactly once.
+#Space complexity: O(N) since we keep up to the entire tree.
 class Solution:
     def isValidBST(self, root: TreeNode, min=None, max=None) -> bool:
         if root:
@@ -28,6 +40,7 @@ class Solution:
             lValid = self.isValidBST(root.left, min, root.val)
             rValid = self.isValidBST(root.right, root.val, max)
             return lValid and rValid
+        #empty tree is valid BST!!
         return True
 
 import unittest

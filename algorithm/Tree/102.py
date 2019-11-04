@@ -39,7 +39,7 @@ class Solution:
             while q:
                 current, level = q.popleft()
                 for children in (current.left, current.right):
-                    if children is not None:
+                    if children:
                         q.append((children, level+1))
                 if level >= len(ans):
                     ans.append([current.val])

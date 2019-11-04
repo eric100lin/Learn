@@ -2,9 +2,12 @@
 333. Largest BST Subtree
 https://leetcode.com/problems/largest-bst-subtree/
 
-Hi, here's your problem today. This problem was recently asked by Twitter:
+Hi, here's your problem today. 
+This problem was recently asked by Twitter:
 
-You are given the root of a binary tree. Find and return the largest subtree of that tree, which is a valid binary search tree.
+You are given the root of a binary tree. 
+Find and return the largest subtree of that tree, 
+which is a valid binary search tree.
 
 Input: 
       5
@@ -78,10 +81,9 @@ def largest_bst_subtree(root):
             if is_valid and cnt > res:
                 res = cnt
                 ret = node
-            if node.left is not None:
-                q.append(node.left)
-            if node.right is not None:
-                q.append(node.right)
+            for children in (node.left, node.right):
+                if children:
+                    q.append(children)
     return ret
 
 

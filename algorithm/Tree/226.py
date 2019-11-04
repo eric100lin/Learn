@@ -35,6 +35,14 @@ class TreeNode:
         if self.right:
             self.right.preorder()
 
+class SolutionRecursion:
+    def invertTree(self, root: TreeNode) -> TreeNode:
+        if root:
+            root.left, root.right = root.right, root.left
+            self.invertTree(root.left)
+            self.invertTree(root.right)
+        return root
+
 class Solution:
     def invertTree(self, root: TreeNode) -> TreeNode:
         stack = []
@@ -43,10 +51,9 @@ class Solution:
         while stack:
             node = stack.pop()
             node.left, node.right = node.right,node.left
-            if node.left:
-                stack.append(node.left)
-            if node.right:
-                stack.append(node.right)
+            for children in (node.left, node.right):
+                if children:
+                    stack.append(children)
         return root
 
 root = TreeNode('a') 

@@ -6,7 +6,8 @@ https://www.lintcode.com/en/old/problem/count-univalue-subtrees/
 
 Hi, here's your problem today. This problem was recently asked by Microsoft:
 
-A unival tree is a tree where all the nodes have the same value. Given a binary tree, return the number of unival subtrees in the tree.
+A unival tree is a tree where all the nodes have the same value. 
+Given a binary tree, return the number of unival subtrees in the tree.
 
 For example, the following tree should return 5:
 
@@ -55,10 +56,9 @@ class Solution:
                 node = q.popleft()
                 if self.isUnival(node):
                     count += 1
-                if node.left is not None:
-                    q.append(node.left)
-                if node.right is not None:
-                    q.append(node.right)
+                for children in (node.left, node.right):
+                    if children:
+                        q.append(children)
         return count
 
 a = Node(0)
