@@ -38,7 +38,8 @@ class Solution:
             str1,str2=str2,str1
         if str1[:len(str2)]!=str2:
             return ""
-        return self.gcdOfStrings(str1[len(str2):], str2)
+        # return GCD(b, a%b)
+        return self.gcdOfStrings(str2, str1[len(str2):])
 
 print(Solution().gcdOfStrings("ABCABC","ABC"))
 #ABC
