@@ -24,16 +24,17 @@ class Solution:
         if N <= 1:
             return 0
 
-        cnt = till = 0
-        maxIdx = 0
+        steps = till = 0
+        farestReach = 0
         for i in range(N):
-            maxIdx = max(maxIdx, i + nums[i])
+            farestReach = max(farestReach, i + nums[i])
             if i == till:
-                cnt += 1
-                till = maxIdx
+                steps += 1
+                till = farestReach
 
             if till >= N - 1:
                 break
-        return cnt
+        return steps
 
 print(Solution().jump([2,3,0,0,4]))
+#2

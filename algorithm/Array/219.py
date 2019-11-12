@@ -26,9 +26,8 @@ class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
         dict = {}
         for idx, num in enumerate(nums):
-            if num in dict:
-                if idx - dict[num] <= k:
-                    return True
+            if num in dict and idx - dict[num] <= k:
+                return True
             dict[num] = idx
         return False
 

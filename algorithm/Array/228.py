@@ -2,15 +2,16 @@
 228. Summary Ranges
 https://leetcode.com/problems/summary-ranges/
 
-Hi, here's your problem today. This problem was recently asked by Facebook:
-
-Given a sorted list of numbers, return a list of strings that represent all of the consecutive numbers.
+Hi, here's your problem today. 
+This problem was recently asked by Facebook:
+Given a sorted list of numbers, 
+return a list of strings that represent all of the consecutive numbers.
 
 Example:
 Input: [0, 1, 2, 5, 7, 8, 9, 9, 10, 11, 15]
 Output: ['0->2', '5', '7->11', '15->15']
-Assume that all numbers will be greater than or equal to 0, and each element can repeat.
-
+Assume that all numbers will be greater than or 
+equal to 0, and each element can repeat.
 '''
 from typing import *
 
@@ -49,6 +50,23 @@ class Solution:
                 result.append("{}->{}".format(nums[start], nums[end-1]))
             start = end
         return result
+
+class AnotherSolution:
+    def summaryRanges(self, nums: List[int]) -> List[str]:
+        summary = []
+        idx = 0
+        while idx < len(nums):
+            start = idx
+            cnt = 1
+            while start+cnt<len(nums) and \
+                  nums[start+cnt]==nums[start+cnt-1]+1:
+                cnt += 1
+            if cnt == 1:
+                summary.append("{}".format(nums[start]))
+            else:
+                summary.append("{}->{}".format(nums[start], nums[start+cnt-1]))
+            idx += cnt
+        return summary
 
 print(Solution().summaryRanges([0, 1, 2, 5, 7, 8, 9, 9, 10, 11, 15]))
 # ['0->2', '5', '7->11', '15->15']
