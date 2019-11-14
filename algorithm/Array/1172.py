@@ -9,7 +9,8 @@ Implement the DinnerPlates class:
  * DinnerPlates(int capacity): 
    Initializes the object with the maximum capacity of the stacks.
  * void push(int val):
-   pushes the given positive integer val into the leftmost stack with size less than capacity.
+   pushes the given positive integer val into the 
+   leftmost stack with size less than capacity.
  * int pop():
    returns the value at the top of the rightmost non-empty stack and 
    removes it from that stack, and returns -1 if all stacks are empty.
@@ -107,6 +108,8 @@ class DinnerPlates:
             theStack = self.stackList[index]
             if theStack:
                 value = theStack.pop()
+                # Multiple heappush at same index is OK!
+                # (more than one space for push)
                 # Let stack[i] empty is OK for push!
                 heapq.heappush(self.notFullHeap, index)
                 return value

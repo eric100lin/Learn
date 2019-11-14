@@ -43,7 +43,7 @@ class Solution:
             if A[i]!=B[i]:
                 diff.append(i)
         # OK Case 1: no different with duplicate letters
-        if len(diff) == 0:
+        if not diff:
             for count in dict.values():
                 if count>=2:
                     return True

@@ -32,6 +32,7 @@ class Solution:
             if dominoes[i] == 'R':
                 f = N
             elif dominoes[i] == 'L':
+                # Reset 'R' force if encounter 'L'!!
                 f = 0
             else:
                 f = max(f-1, 0) #Replace of "if f-1>=0: f-=1"
@@ -42,16 +43,17 @@ class Solution:
             if dominoes[i] == 'R':
                 f = 0
             elif dominoes[i] == 'L':
+                # Reset 'L' force if encounter 'R'!!
                 f = N
             else:
                 f = max(f-1, 0)
             force[i] -= f
         
         ans = ""
-        for i in range(N):
-            if force[i] == 0:
+        for f in force:
+            if f == 0:
                 ans += '.'
-            elif force[i]>0:
+            elif f>0:
                 ans += 'R'
             else:
                 ans += 'L'

@@ -29,6 +29,17 @@ class Solution:
                 res.append(n)
         return res
 
+class AnotherSolution:
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        c1 = collections.Counter(nums1)
+        c2 = collections.Counter(nums2)
+        ci = c1 & c2
+        ans = []
+        for num in ci:
+            for n in range(ci[num]):
+                ans.append(num)
+        return ans
+
 print(Solution().intersect([1,2,2,1], [2,2]))
 #[2,2]
 

@@ -12,18 +12,18 @@ where each answer[i] is the number of words such that
 f(queries[i]) < f(W), where W is a word in words.
 
 Example 1:
-
 Input: queries = ["cbd"], words = ["zaaaz"]
 Output: [1]
-Explanation: On the first query we have f("cbd") = 1, f("zaaaz") = 3 so f("cbd") < f("zaaaz").
-Example 2:
+Explanation: 
+On the first query we have f("cbd") = 1, f("zaaaz") = 3 so 
+f("cbd") < f("zaaaz").
 
+Example 2:
 Input: queries = ["bbb","cc"], words = ["a","aa","aaa","aaaa"]
 Output: [1,2]
 Explanation: 
 On the first query only f("bbb") < f("aaaa"). 
 On the second query both f("aaa") and f("aaaa") are both > f("cc").
- 
 
 Constraints:
 
@@ -31,13 +31,36 @@ Constraints:
 1 <= words.length <= 2000
 1 <= queries[i].length, words[i].length <= 10
 queries[i][j], words[i][j] are English lowercase letters.
-
 '''
+from typing import *
+import collections
+
 class Solution:
+    def freq(self, str):
+        counter = collections.Counter(str)
+        c = min(str)
+        return counter[c]
+
+    def numSmallerByFrequency(self, queries: List[str], words: List[str]) -> List[int]:
+        fws = []
+        for word in words:
+            fws.append(self.freq(word))
+        ans = []
+        for query in queries:
+            cnt = 0
+            freQ = self.freq(query)
+            for fw in fws:
+                if freQ < fw:
+                    cnt += 1
+            ans.append(cnt)
+        return ans
+
+class SortingSolution:
     def frequency(self,str):
         if not str:
             return 0
         str = sorted(str)
+        # After sorting, minmum at beginning
         minCharCnt=0
         for char in str:
             if char==str[0]:
@@ -46,7 +69,7 @@ class Solution:
                 break
         return minCharCnt
 
-    def numSmallerByFrequency(self, queries,words):
+    def numSmallerByFrequency(self, queries: List[str], words: List[str]) -> List[int]:
         answer = []
         fws = []
         for w in words:
@@ -59,3 +82,8 @@ class Solution:
                     count += 1
             answer.append(count)
         return answer
+
+print(Solution().numSmallerByFrequency(queries = ["cbd"], words = ["zaaaz"]))
+#[1]
+print(Solution().numSmallerByFrequency(queries = ["bbb","cc"], words = ["a","aa","aaa","aaaa"]))
+#[1,2]
