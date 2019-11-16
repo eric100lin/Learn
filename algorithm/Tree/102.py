@@ -38,9 +38,10 @@ class Solution:
             q.append((root, 0))
             while q:
                 current, level = q.popleft()
-                for children in (current.left, current.right):
-                    if children:
-                        q.append((children, level+1))
+                for child in (current.left, current.right):
+                    if child:
+                        q.append((child, level+1))
+                # Elegant! Use index >= (length of array) to check
                 if level >= len(ans):
                     ans.append([current.val])
                 else:

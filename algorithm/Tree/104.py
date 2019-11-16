@@ -38,9 +38,9 @@ class Solution:
             while q:
                 (node, depth) = q.popleft()
                 maxdepth = max(maxdepth, depth)
-                for children in (node.left, node.right):
-                    if children:
-                        q.append((children, depth+1))
+                for child in (node.left, node.right):
+                    if child:
+                        q.append((child, depth+1))
         return maxdepth
 
 def deepest(node):

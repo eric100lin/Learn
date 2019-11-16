@@ -38,6 +38,7 @@ class TreeNode:
 class SolutionRecursion:
     def invertTree(self, root: TreeNode) -> TreeNode:
         if root:
+            # No need to use return value!!
             root.left, root.right = root.right, root.left
             self.invertTree(root.left)
             self.invertTree(root.right)
@@ -51,9 +52,9 @@ class Solution:
         while stack:
             node = stack.pop()
             node.left, node.right = node.right,node.left
-            for children in (node.left, node.right):
-                if children:
-                    stack.append(children)
+            for child in (node.left, node.right):
+                if child:
+                    stack.append(child)
         return root
 
 root = TreeNode('a') 

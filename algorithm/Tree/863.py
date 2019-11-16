@@ -62,11 +62,13 @@ class Solution:
         if root and target:
             q  = collections.deque()
             q.append((target, 0))
+            # Use set to avoid duplication
             seen = { target }
             while q:
                 node, d = q.popleft()
                 if d==K:
                     result.append(node.val)
+                # Else CONDITION!! Add distance+1 nodes if K not arrived
                 else:
                     for nei in (node.left, node.right, node.parent):
                         if nei and nei not in seen:

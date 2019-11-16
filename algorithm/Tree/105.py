@@ -50,3 +50,9 @@ inorder =  [9,3,15,20,7]
 root = Solution().buildTree(preorder, inorder)
 root.traversal()
 print()
+# 9 15 7 20 3
+#    3
+#   / \
+#  9  20
+#    /  \
+#   15   7

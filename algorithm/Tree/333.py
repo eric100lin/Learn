@@ -40,6 +40,7 @@ The following subtree is the maximum size BST subtree
       65    80
 '''
 from typing import *
+import collections
 
 class TreeNode:
     def __init__(self, key):
@@ -56,7 +57,6 @@ class TreeNode:
             answer += ' ' + str(self.right)
         return answer
 
-
 def isValidBST(node, min=None, max=None):
     if node:
         if min is not None and node.key <= min:
@@ -69,22 +69,21 @@ def isValidBST(node, min=None, max=None):
     return True, 0
 
 def largest_bst_subtree(root):
-    ret = None
+    bstRoot = None
     if root:
-        res = 0
-        import collections
+        maxBSTSize = 0
         q = collections.deque()
         q.append(root)
         while q:
             node = q.popleft()
-            is_valid, cnt = isValidBST(node)
-            if is_valid and cnt > res:
-                res = cnt
-                ret = node
-            for children in (node.left, node.right):
-                if children:
-                    q.append(children)
-    return ret
+            isValid, size = isValidBST(node)
+            if isValid and size > maxBSTSize:
+                maxBSTSize = cnt
+                bstRoot = node
+            for child in (node.left, node.right):
+                if child:
+                    q.append(child)
+    return bstRoot
 
 
 import unittest
