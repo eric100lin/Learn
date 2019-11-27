@@ -41,6 +41,13 @@ class Solution:
                 heapq.heappush(mod1Heap, num)
             elif mod == 2:
                 heapq.heappush(mod2Heap, num)
+        # Divide the whole list into three parts: mod_0, mod_1, mod_2.
+        # Think about the sum of the original list, 
+        # if it mods 3 == 0, then we can just return the sum.
+        # If tot_sum % 3 == 1, then we should remove 
+        # one smallest element from mod_1 or two smallest ones from mod_2.
+        # If tot_sum % 3 == 2, then we should remove 
+        # one smallest element from mod_2 or two smallest ones from mod_1.
         if totalSum % 3 == 0:
             remove = 0
         elif totalSum % 3 == 1:
