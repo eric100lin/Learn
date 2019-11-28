@@ -20,6 +20,10 @@ from typing import *
 
 class Solution:
     def maxSubProduct(self, nums: List[int]) -> int:
+        # check not empty
+        # avoid array index out of range for prices[0]
+        if not nums:
+            return 0
         subMax = subMin = maxSubProd = nums[0]
         #print("maxSubProd:{0}".format(maxSubProd))
         for i in range(1, len(nums)):

@@ -21,6 +21,8 @@ from typing import *
 class Solution:
 
     def maxSubArray(self, nums: List[int]) -> int:
+        # check not empty
+        # avoid array index out of range for nums[0]
         if not nums:
             return 0
         maxSubSum = nums[0]
@@ -40,3 +42,4 @@ class DPSolution:
         return max(dp)
 
 print(Solution().maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
+# 6

@@ -26,15 +26,18 @@ from typing import *
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
+        # check not empty
+        # avoid array index out of range for prices[0]
+        if not prices:
+            return 0
         profit = 0
-        if prices:
-            minPrice = prices[0]
-            for pidx in range(1, len(prices)):
-                # ONLY cares largest peak 
-                # following the smallest valley, 
-                # keep updating valid result
-                minPrice = min(minPrice, prices[pidx])
-                profit = max(profit, prices[pidx]-minPrice)
+        minPrice = prices[0]
+        for pidx in range(1, len(prices)):
+            # ONLY cares largest peak 
+            # following the smallest valley, 
+            # keep updating valid result
+            minPrice = min(minPrice, prices[pidx])
+            profit = max(profit, prices[pidx]-minPrice)
         return profit
 
 print(Solution().maxProfit([7,1,5,3,6,4]))

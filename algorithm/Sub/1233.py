@@ -40,16 +40,17 @@ from typing import *
 class Solution:
     def removeSubfolders(self, folder: List[str]) -> List[str]:
         ans = []
-        set = { f for f in folder }
+        folderSet = set(folder)
         for f in folder:
             path = f
             while path:
                 # Cut down last ..."/xx" to move 
                 # upper level and look for it in set
                 path = path[:path.rfind('/')]
-                if path in set:
+                if path in folderSet:
                     break
             else:
+                # Append if no break
                 ans.append(f)
         return ans
 
